@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 
 class CommonTextFromField extends StatelessWidget {
-  const CommonTextFromField({
-    super.key, this.labelText, required this.controller, required this.validator, this.hintText,  this.textInputType,
+   CommonTextFromField({
+    super.key, this.labelText, required this.controller, required this.validator, this.hintText,  this.textInputType, this.maxLines
   });
 
   final String? labelText;
@@ -12,6 +12,7 @@ class CommonTextFromField extends StatelessWidget {
   final TextEditingController controller;
   final Function(String?) validator;
   final TextInputType? textInputType;
+  int?  maxLines;
 
 
   @override
@@ -19,6 +20,8 @@ class CommonTextFromField extends StatelessWidget {
     return TextFormField(
       keyboardType: textInputType,
       controller: controller,
+      maxLines: maxLines,
+
       validator: (value) => validator(value),
       decoration:  InputDecoration(
           hintText: hintText,
@@ -28,9 +31,9 @@ class CommonTextFromField extends StatelessWidget {
               borderSide: BorderSide(color: primaryColor)),
           enabledBorder:  const OutlineInputBorder(borderSide: BorderSide(color: primaryColor)),
           focusedBorder:  const OutlineInputBorder(borderSide: BorderSide(color: primaryColor,width: 2)),
-          contentPadding:  const EdgeInsets.symmetric(
-            vertical: 4, horizontal: 16,
-          )
+          // contentPadding:  const EdgeInsets.symmetric(
+          //   vertical: 4, horizontal: 16,
+          // )
       ),
     );
   }
