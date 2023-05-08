@@ -101,7 +101,9 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 ),
                 CommonElevatedButton(title: "Next", onTap: () {
 
-                  Get.to(const BottomNavBarScreen());
+
+
+                  Get.offAll(()=>const BottomNavBarScreen());
 
                 }
                 )
