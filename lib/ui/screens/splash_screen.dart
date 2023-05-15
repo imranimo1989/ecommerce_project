@@ -1,4 +1,4 @@
-import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
+import 'package:ecommerce_project/ui/screens/bottom_nav_bar_screen.dart';
 import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3)).then((value){
-      Get.off(const EmailVerificationScreen());
+      Get.off(()=>const BottomNavBarScreen());
     });
 
     super.initState();

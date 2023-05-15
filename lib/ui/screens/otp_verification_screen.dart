@@ -1,7 +1,7 @@
 import 'package:ecommerce_project/ui/screens/complete_profile_screen.dart';
 import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:ecommerce_project/ui/utils/styles.dart';
-import 'package:ecommerce_project/ui/widgets/common_elevated_button.dart';
+import 'package:ecommerce_project/ui/widgets/common_elevated_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:get/get.dart';

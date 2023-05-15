@@ -18,9 +18,13 @@ class CraftyBay extends StatelessWidget {
       defaultBrightness: Brightness.light,
       builder: ( context, brightness) {
         return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
           //themeMode: ThemeMode.light,
 
           darkTheme: ThemeData(
+            appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.black45,
+            ),
              brightness: brightness,
             primaryColorDark: Colors.white,
             primaryColor: Colors.white,
@@ -33,11 +37,17 @@ class CraftyBay extends StatelessWidget {
           ),
 
           theme: ThemeData(
+            appBarTheme:   const AppBarTheme(
+              elevation: 1,
+              backgroundColor: Colors.white,
+              titleTextStyle: TextStyle(
+                color: draculaBlack,fontSize: 16,fontWeight: FontWeight.w500
+              )
+            ),
             brightness: brightness,
+            colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
             textTheme: const TextTheme(
-              displayLarge: TextStyle(color: Colors.black),
-              displayMedium: TextStyle(color: Colors.black),
-              displaySmall: TextStyle(color: Colors.black),
+
             ),
             elevatedButtonTheme: ElevatedButtonThemeData(
                 style: ElevatedButton.styleFrom(

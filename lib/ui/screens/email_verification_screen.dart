@@ -3,8 +3,8 @@ import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:ecommerce_project/ui/utils/styles.dart';
 import 'package:flutter/material.dart';
 import '../utils/theme_builder.dart';
-import '../widgets/common_elevated_button.dart';
-import '../widgets/common_text_form_field.dart';
+import '../widgets/common_elevated_button_widget.dart';
+import '../widgets/common_text_form_field_widget.dart';
 import 'package:get/get.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
@@ -28,14 +28,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        ThemeBuilder.of(context)?.changeTheme();
-        setState(() {
 
-        });
-      },
-
-      ),
       body: Padding(
         padding: const EdgeInsets.all(32.0),
         child: Column(

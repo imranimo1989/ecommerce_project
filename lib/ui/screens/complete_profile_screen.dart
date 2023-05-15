@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../utils/styles.dart';
-import '../widgets/common_elevated_button.dart';
-import '../widgets/common_text_form_field.dart';
+import '../widgets/common_elevated_button_widget.dart';
+import '../widgets/common_text_form_field_widget.dart';
 
 class CompleteProfileScreen extends StatefulWidget {
   const CompleteProfileScreen({Key? key}) : super(key: key);
