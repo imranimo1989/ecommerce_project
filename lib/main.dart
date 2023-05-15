@@ -1,3 +1,4 @@
+import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
 import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:ecommerce_project/ui/utils/theme_builder.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class CraftyBay extends StatelessWidget {
       defaultBrightness: Brightness.light,
       builder: ( context, brightness) {
         return GetMaterialApp(
+          initialBinding: GetXBindings(),
           debugShowCheckedModeBanner: false,
           //themeMode: ThemeMode.light,
 
@@ -60,4 +62,13 @@ class CraftyBay extends StatelessWidget {
       },
     );
   }
+}
+
+class GetXBindings extends Bindings{
+  @override
+  void dependencies() {
+    Get.put(BottomNavigationBarController());
+  }
+
+
 }
