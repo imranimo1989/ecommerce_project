@@ -13,7 +13,7 @@ class ProductCardWidget extends StatelessWidget {
       width: 160,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        margin: const EdgeInsets.only(right: 16,top: 4,bottom: 4,left: 2),
+        margin: const EdgeInsets.only(right: 4,top: 4,bottom: 4,left: 4),
         elevation: 2,
         child: Column(
           children: [

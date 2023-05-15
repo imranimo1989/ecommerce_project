@@ -42,6 +42,7 @@ class CraftyBay extends StatelessWidget {
             appBarTheme:   const AppBarTheme(
               elevation: 1,
               backgroundColor: Colors.white,
+              foregroundColor: Colors.black87,
               titleTextStyle: TextStyle(
                 color: draculaBlack,fontSize: 16,fontWeight: FontWeight.w500
               )

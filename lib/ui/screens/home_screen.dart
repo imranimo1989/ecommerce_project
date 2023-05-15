@@ -1,5 +1,8 @@
 
+import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
+import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../widgets/category_card_widget.dart';
 import '../widgets/home_screen_widgets/appbar_icon_button_widget.dart';
 import '../widgets/home_screen_widgets/home_carousal_slider_widget.dart';
@@ -59,7 +62,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               RemarksTitleWidget(
                 remarksTitle: 'Categories',
-                onTapSeeAll: () {},
+                onTapSeeAll: () {
+                  Get.find<BottomNavigationBarController>().changeIndex(1);
+                },
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -91,7 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               RemarksTitleWidget(
                 remarksTitle: 'Popular',
-                onTapSeeAll: () {},
+                onTapSeeAll: () {
+                  Get.to(()=>const ProductListScreen());
+                },
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
