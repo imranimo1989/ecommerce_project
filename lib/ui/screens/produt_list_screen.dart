@@ -14,7 +14,7 @@ class ProductListScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, childAspectRatio: .65,
+            crossAxisCount: 3, childAspectRatio: .75,
         ),
             itemCount: 20,
             itemBuilder: (context, index){

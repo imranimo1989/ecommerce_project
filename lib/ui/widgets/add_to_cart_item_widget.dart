@@ -17,58 +17,58 @@ class AddToCartItemWidget extends StatelessWidget {
       ),
       elevation: 2,
       margin: const EdgeInsets.symmetric(horizontal: 8,vertical: 4),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Row(
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.network(
-                  "https://freepngimg.com/save/27428-nike-shoes-transparent-background/800x587",
-                  height: 70,
-                  width: 85,
-                  scale: 1,
-                  fit: BoxFit.fill,
-                ),
-              ),
-              const SizedBox(width: 8,),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Nike Air Max 270",style: titleTextStyle.copyWith(color: Colors.black.withOpacity(.75),fontSize: 16)),
-                          const SizedBox(height: 4,),
-                          Text("Color: Red  Size: X",style: TextStyle(fontSize: 12,color: Colors.grey.shade600),)
-                        ],
-                      ),
-
-                      const SizedBox(width: 80,),
-
-                      IconButton(onPressed: (){}, icon: const Icon(Icons.delete,color: Colors.grey,))
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text("\$100",style: TextStyle(color: primaryColor,fontSize: 18,fontWeight: FontWeight.w500),),
-                      SizedBox(width: 120,),
-                      ProductStepperWidget(),
-                    ],
-
-                  ),
-                ],
-              ),
-
-
-
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Image.network(
+              "https://freepngimg.com/save/27428-nike-shoes-transparent-background/800x587",
+              height: 70,
+              width: 85,
+              scale: 1,
+              fit: BoxFit.fill,
+            ),
           ),
+          const SizedBox(width: 8,),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Nike Air Max 270",style: titleTextStyle.copyWith(color: Colors.black.withOpacity(.75),fontSize: 16)),
+                        const SizedBox(height: 4,),
+                        Text("Color: Red  Size: X",style: TextStyle(fontSize: 12,color: Colors.grey.shade600),)
+                      ],
+                    ),
+
+                    //const SizedBox(width: 80,),
+
+                    IconButton(onPressed: (){}, icon: const Icon(Icons.delete,color: Colors.grey,))
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    Text("\$100",style: TextStyle(color: primaryColor,fontSize: 18,fontWeight: FontWeight.w500),),
+                   // SizedBox(width: 120,),
+                    Padding(
+                      padding: EdgeInsets.only(right: 16),
+                      child: ProductStepperWidget(),
+                    ),
+                  ],
+
+                ),
+              ],
+            ),
+          ),
+
+
+
         ],
       ),
     );
