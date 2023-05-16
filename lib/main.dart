@@ -44,7 +44,7 @@ class CraftyBay extends StatelessWidget {
               backgroundColor: Colors.white,
               foregroundColor: Colors.black87,
               titleTextStyle: TextStyle(
-                color: draculaBlack,fontSize: 16,fontWeight: FontWeight.w500
+                color: blackLight,fontSize: 16,fontWeight: FontWeight.w500
               )
             ),
             brightness: brightness,

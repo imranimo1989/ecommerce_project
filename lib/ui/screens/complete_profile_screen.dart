@@ -38,7 +38,7 @@ class _CompleteProfileScreenState extends State<CompleteProfileScreen> {
                 ),
                 Text(
                   "Get started with us with your details",
-                  style: subTextStyle,
+                  style: regularTextStyle,
                 ),
                 const SizedBox(
                   height: 16,

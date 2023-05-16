@@ -29,7 +29,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             const SizedBox(height: 16,),
             Text("Enter OTP Code",style: titleTextStyle,),
             const SizedBox(height: 4,),
-            Text("A 4 digit OTP code has been sent",style: subTextStyle,),
+            Text("A 4 digit OTP code has been sent",style: regularTextStyle,),
             const SizedBox(height: 16,),
             PinCodeTextField(
               length:4,
@@ -66,7 +66,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
             }),
             const SizedBox(height: 24,),
             RichText(
-              text:  TextSpan(text: 'This code will expired in ',style: subTextStyle, children: const [
+              text:  TextSpan(text: 'This code will expired in ',style: regularTextStyle, children: const [
                 TextSpan(text: '120s', style: TextStyle(fontWeight: FontWeight.w500, color: primaryColor))
               ]),
             ),

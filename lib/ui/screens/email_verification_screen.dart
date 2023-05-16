@@ -47,7 +47,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
             ),
             Text(
               "Please Enter Your Email Address",
-              style: subTextStyle,
+              style: regularTextStyle,
             ),
             const SizedBox(
               height: 16,

@@ -1,7 +1,10 @@
+import 'package:ecommerce_project/ui/screens/cart_screen.dart';
+import 'package:ecommerce_project/ui/screens/create_review_screen.dart';
 import 'package:ecommerce_project/ui/utils/styles.dart';
 import 'package:ecommerce_project/ui/widgets/common_elevated_button_widget.dart';
 import 'package:ecommerce_project/ui/widgets/product_stepper_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../utils/app_colors.dart';
 import '../widgets/product_details_widget/product_image_carousel_widget.dart';
@@ -93,7 +96,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                       width: 16,
                                     ),
                                     TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Get.to(()=>const CreateReviewScreen());
+                                      },
                                       child: const Text(
                                         "Reviews",
                                         style: TextStyle(
@@ -238,7 +243,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       ),
                       Text(
                         "The Nike Air Max 270 features a sleek and modern silhouette with a low-top design. Its upper is made of a breathable mesh material that helps keep your feet cool and comfortable during wear. The shoe incorporates a large, visible Air Max unit in the heel, providing excellent cushioning and impact absorption with each step.",
-                        style: subTextStyle.copyWith(fontSize: 14,height: 1.2)
+                        style: regularTextStyle.copyWith(fontSize: 14,height: 1.2)
                       ),
                     ],
                   ),
@@ -276,7 +281,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   SizedBox(
                     width: 130,
                     height: 40,
-                    child: CommonElevatedButton(onTap: () {  }, title: 'Add to cart',
+                    child: CommonElevatedButton(onTap: () {  Get.to(()=>const CartScreen()); }, title: 'Add to cart',
 
                     ),
                   )
