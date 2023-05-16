@@ -17,7 +17,7 @@ class CommonElevatedButton extends StatelessWidget {
           onPressed: onTap,
           child:  Text(
             title,
-            style: const TextStyle(fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: .6),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: .4),
           )),
     );
   }

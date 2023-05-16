@@ -14,6 +14,7 @@ class SearchTextFieldWidget extends StatelessWidget {
       onSubmitted: (value) {},
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.zero,
           hintText: "Search",
           prefixIcon: const Icon(Icons.search),
           fillColor: lightGreyColor.withOpacity(.2),
