@@ -42,14 +42,14 @@ class _ProductStepperWidgetState extends State<ProductStepperWidget> {
             decoration:  BoxDecoration(
               color: primaryColor,
               borderRadius: BorderRadius.circular(4),
-            ),width: 30,height:30,
+            ),width: 24,height:24,
             child: const Icon(Icons.remove,color: Colors.white,size: 20,),
           ),
         ),
-        SizedBox(width: 50,
+        SizedBox(width: 40,
           child: TextField(
               controller: textEditingController,
-              readOnly: true,style: const TextStyle(fontWeight: FontWeight.w600,fontSize: 20),
+              readOnly: true,style: const TextStyle(fontWeight: FontWeight.w500,fontSize: 16),
               decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -72,7 +72,7 @@ class _ProductStepperWidgetState extends State<ProductStepperWidget> {
             decoration:  BoxDecoration(
               color: primaryColor,
               borderRadius: BorderRadius.circular(4),
-            ),width: 30,height:30,
+            ),width: 24,height:24,
             child: const Icon(Icons.add,color: Colors.white,size: 20,),
           ),
         ),
