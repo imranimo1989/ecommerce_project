@@ -18,19 +18,19 @@ class NetworkCaller {
         return ResponseModel(
           isSuccess: true,
           statusCode: response.statusCode,
-          responseBody: jsonEncode(response.body),
+          responseBody: jsonDecode(response.body),
         );
       } else {
         return ResponseModel(
-          isSuccess: true,
+          isSuccess: false,
           statusCode: response.statusCode,
-          responseBody: jsonEncode(response.body),
+          responseBody: jsonDecode(response.body),
         );
       }
     } catch (e) {
       log(e.toString());
       return ResponseModel(
-        isSuccess: true,
+        isSuccess: false,
         statusCode: -1,
         responseBody: e.toString(),
       );

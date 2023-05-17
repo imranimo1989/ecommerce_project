@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:ecommerce_project/data/services/network_caller.dart';
+import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:get/get.dart';
 
 class UserAuthController extends GetxController {
@@ -18,23 +21,37 @@ class UserAuthController extends GetxController {
       update();
       return false;
     }
-  }//========================End Email Verification=============================
+  } //========================End Email Verification=============================
 
   bool _otpVerificationInProgress = false;
+
   bool get otpVerificationInProgress => _otpVerificationInProgress;
 
   Future<bool> otpVerification(String email, String otp) async {
+    //inProgress loader update
     _otpVerificationInProgress = true;
     update();
-    final response =
-        await NetworkCaller.getRequest(url: "/VerifyLogin/$email/$otp");
+
+    //call api to verify otp
+    final response = await NetworkCaller.getRequest(url: "/VerifyLogin/$email/$otp");//end
+
+    //inProgress loader update
     _otpVerificationInProgress = false;
+
     if (response.isSuccess) {
+
+      //save token data to shared preferences from api
+      await Get.find<AuthController>().saveToken(response.responseBody["data"]);
+
+      //Checking token saved or not
+      final String craftyUserToken = Get.find<AuthController>().token.toString();
+      log("Crafty User Token: $craftyUserToken"); //===========end
+
       update();
       return true;
     } else {
       update();
       return false;
     }
-  }//========================End Otp Verification===============================
+  } //========================End Otp Verification===============================
 }

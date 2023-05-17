@@ -3,7 +3,7 @@
 class ResponseModel{
 
   final int statusCode;
-  final String responseBody;
+  final dynamic responseBody;
   final bool isSuccess;
 
   ResponseModel({required this.isSuccess, required this.statusCode, required this.responseBody, });
