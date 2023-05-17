@@ -1,10 +1,13 @@
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/otp_timer_controller.dart';
 import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:ecommerce_project/ui/utils/theme_builder.dart';
 import 'package:get/get.dart';
 
 import 'ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'ui/state_manager/user_auth_controller.dart';
 
 void main() {
   runApp(const CraftyBay());
@@ -69,6 +72,8 @@ class GetXBindings extends Bindings{
   @override
   void dependencies() {
     Get.put(BottomNavigationBarController());
+    Get.put(UserAuthController());
+    Get.put(OtpTimerController());
   }
 
 

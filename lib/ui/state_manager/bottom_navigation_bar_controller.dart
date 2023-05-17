@@ -20,3 +20,4 @@ class BottomNavigationBarController extends GetxController{
   }
 
 }
+

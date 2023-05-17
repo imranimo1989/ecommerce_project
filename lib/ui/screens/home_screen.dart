@@ -1,4 +1,5 @@
 
+import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
 import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
             const Spacer(),
             AppBarIconButton(
               iconData: Icons.person,
-              onTap: () {},
+              onTap: () {
+                Get.to(()=>const EmailVerificationScreen());
+              },
             ),
             AppBarIconButton(
               iconData: Icons.call,

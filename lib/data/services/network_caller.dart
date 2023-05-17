@@ -11,9 +11,15 @@ class NetworkCaller {
   static Future<ResponseModel> getRequest({required String url}) async {
     try {
       final Response response = await get(Uri.parse(Urls.baseUrl + url));
+      log("Request Url: ${Urls.baseUrl + url}");
+      log("Get request response: ${response.body}");
 
       if (response.statusCode == 200) {
-        return ResponseModel(isSuccess: true, statusCode: response.statusCode, responseBody: jsonEncode(response.body));
+        return ResponseModel(
+          isSuccess: true,
+          statusCode: response.statusCode,
+          responseBody: jsonEncode(response.body),
+        );
       } else {
         return ResponseModel(
           isSuccess: true,

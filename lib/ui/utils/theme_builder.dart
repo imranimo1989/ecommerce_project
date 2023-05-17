@@ -5,7 +5,7 @@ class ThemeBuilder extends StatefulWidget {
   final Widget Function(BuildContext context, Brightness brightness) builder;
   final Brightness defaultBrightness;
 
-  ThemeBuilder({required this.builder, required this.defaultBrightness});
+  ThemeBuilder({super.key, required this.builder, required this.defaultBrightness});
 
   @override
   State<ThemeBuilder> createState() => _ThemeBuilderState();
