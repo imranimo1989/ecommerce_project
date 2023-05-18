@@ -1,6 +1,7 @@
 import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/otp_timer_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/user_profile_controller.dart';
 import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:ecommerce_project/ui/utils/theme_builder.dart';
 import 'package:get/get.dart';
@@ -105,6 +106,7 @@ class GetXBindings extends Bindings{
     Get.put(UserAuthController());
     Get.put(OtpTimerController());
     Get.put(AuthController());
+    Get.put(UserProfileController());
 
   }
 
