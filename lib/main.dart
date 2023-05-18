@@ -107,6 +107,8 @@ class GetXBindings extends Bindings{
     Get.put(OtpTimerController());
     Get.put(AuthController());
     Get.put(UserProfileController());
+    Get.put(UserProfileController());
+
 
   }
 

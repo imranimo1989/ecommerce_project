@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:ecommerce_project/data/services/network_caller.dart';
 import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/user_profile_controller.dart';
 import 'package:get/get.dart';
 
 class UserAuthController extends GetxController {
@@ -42,9 +43,10 @@ class UserAuthController extends GetxController {
 
       //save token data to shared preferences from api
       await Get.find<AuthController>().saveToken(response.responseBody["data"]);
+      Get.find<UserProfileController>().getUserProfile();
 
       //Checking token saved or not
-      final String craftyUserToken = Get.find<AuthController>().token.toString();
+      final String craftyUserToken = AuthController.token.toString();
       log("Crafty User Token: $craftyUserToken"); //===========end
 
       update();

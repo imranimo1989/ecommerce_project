@@ -1,6 +1,8 @@
 
+import 'package:ecommerce_project/ui/screens/complete_profile_screen.dart';
 import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
 import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
+import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,12 +30,22 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         title: Row(
           children: [
+            //app logo
             Image.asset('assets/images/logo_nav.png'),
             const Spacer(),
+            //show user profile screen if not update or not registered
             AppBarIconButton(
               iconData: Icons.person,
               onTap: () {
-                Get.to(()=>const EmailVerificationScreen());
+                Get.find<AuthController>().isLoggedIn().then((value)  {
+                  if(!value){
+                    Get.to(()=>const EmailVerificationScreen());
+                  }else{
+                    Get.to(()=>const CompleteProfileScreen());
+
+                  }
+                });
+
               },
             ),
             AppBarIconButton(
