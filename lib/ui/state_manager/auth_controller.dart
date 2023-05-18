@@ -5,13 +5,13 @@ class AuthController extends GetxController {
   String? token;
 
   Future<bool> isLoggedIn() async {
-    getToken();
+   await getToken();
     return token != null; //best way
     // if(token==null){
     //   return false;
     // }else{
     //   return true;
-    //}
+    // }
   } //===========================End Is logged In Method ====================================
 
   Future<void> saveToken(String userToken) async {

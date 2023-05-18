@@ -19,6 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
 
     Future.delayed(const Duration(seconds: 1)).then((value) async {
+
       final bool loginState = await Get.find<AuthController>().isLoggedIn();
 
       //User login state check
