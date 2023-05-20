@@ -4,6 +4,7 @@ import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
 import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
 import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/home_slider_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/category_card_widget.dart';
@@ -71,7 +72,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               /// Home Carousel Slider Widget
-              HomeCarouselSliderWidget(),
+              GetBuilder<HomeSliderController>(
+                builder: (carouselSliderController) {
+                return carouselSliderController.getCarouselSliderControllerIsLoading
+                    ? const SizedBox(height: 180,child: Center(child: ( CircularProgressIndicator())))
+                    : HomeCarouselSliderWidget(homeSliderModel: carouselSliderController.homeSliderModel,);
+              }
+              ),
               const SizedBox(
                 height: 16,
               ),
