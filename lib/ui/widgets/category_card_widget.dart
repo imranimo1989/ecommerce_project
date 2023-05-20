@@ -1,29 +1,27 @@
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
 import '../utils/app_colors.dart';
 
 class CategoryCardWidget extends StatelessWidget {
   const CategoryCardWidget({
-    super.key, required this.categoryName,
+    super.key, required this.categoryName, required this.imageUrl,
   });
   final String categoryName;
+  final String imageUrl;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment:CrossAxisAlignment.center,
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Container(
             decoration:
             BoxDecoration(color: primaryColor.withOpacity(.1), borderRadius: BorderRadius.circular(8)),
-            child: const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Icon(
-                Icons.computer,size: 28,
-                color: primaryColor,
-              ),
+            child:  Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.network(imageUrl,width: 40,)
             ),
           ),
         ),

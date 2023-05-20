@@ -1,9 +1,9 @@
-
 import 'package:ecommerce_project/ui/screens/complete_profile_screen.dart';
 import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
 import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
 import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/categories_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/home_slider_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -38,15 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
             AppBarIconButton(
               iconData: Icons.person,
               onTap: () {
-                Get.find<AuthController>().isLoggedIn().then((value)  {
-                  if(!value){
-                    Get.to(()=>const EmailVerificationScreen());
-                  }else{
-                    Get.to(()=>const CompleteProfileScreen());
-
+                Get.find<AuthController>().isLoggedIn().then((value) {
+                  if (!value) {
+                    Get.to(() => const EmailVerificationScreen());
+                  } else {
+                    Get.to(() => const CompleteProfileScreen());
                   }
                 });
-
               },
             ),
             AppBarIconButton(
@@ -64,6 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ///Home Main Search Bar //
               const SearchTextFieldWidget(),
@@ -72,13 +71,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               /// Home Carousel Slider Widget
-              GetBuilder<HomeSliderController>(
-                builder: (carouselSliderController) {
+              GetBuilder<HomeSliderController>(builder: (carouselSliderController) {
                 return carouselSliderController.getCarouselSliderControllerIsLoading
-                    ? const SizedBox(height: 180,child: Center(child: ( CircularProgressIndicator())))
-                    : HomeCarouselSliderWidget(homeSliderModel: carouselSliderController.homeSliderModel,);
-              }
-              ),
+                    ? const SizedBox(height: 180, child: Center(child: (CircularProgressIndicator())))
+                    : HomeCarouselSliderWidget(
+                        homeSliderModel: carouselSliderController.homeSliderModel,
+                      );
+              }),
               const SizedBox(
                 height: 16,
               ),
@@ -88,38 +87,30 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.find<BottomNavigationBarController>().changeIndex(1);
                 },
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: const [
-                    CategoryCardWidget(
-                      categoryName: 'Computer',
-                    ),
-                    CategoryCardWidget(
-                      categoryName: 'Food',
-                    ),
-                    CategoryCardWidget(
-                      categoryName: 'Fashion',
-                    ),
-                    CategoryCardWidget(
-                      categoryName: 'Furniture',
-                    ),
-                    CategoryCardWidget(
-                      categoryName: 'Automobile',
-                    ),
-                    CategoryCardWidget(
-                      categoryName: 'Electronics',
-                    ),
-                  ],
-                ),
-              ),
+              GetBuilder<CategoriesController>(builder: (categoriesController) {
+                return categoriesController.getCategoriesInProgress
+                    ? const SizedBox(height: 100, child: Center(child: (CircularProgressIndicator())))
+                    : SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: categoriesController.categoriesModel.categories!
+                              .map(
+                                (e) => CategoryCardWidget(
+                                  categoryName: e.categoryName.toString(), imageUrl: e.categoryImg.toString(),
+                                ),
+                              )
+                              .toList(),
+                        ),
+                      );
+              }),
               const SizedBox(
                 height: 16,
               ),
               RemarksTitleWidget(
                 remarksTitle: 'Popular',
                 onTapSeeAll: () {
-                  Get.to(()=>const ProductListScreen());
+                  Get.to(() => const ProductListScreen());
                 },
               ),
               SingleChildScrollView(
@@ -167,4 +158,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-

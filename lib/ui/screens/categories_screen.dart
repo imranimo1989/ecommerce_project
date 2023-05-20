@@ -1,4 +1,5 @@
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/categories_controller.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/category_card_widget.dart';
@@ -22,11 +23,19 @@ class CategoriesScreen extends StatelessWidget {
 
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-            itemCount: 30,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),  itemBuilder: (context, index){
-              return const CategoryCardWidget(categoryName: 'Computer',);
-        }),
+        child: GetBuilder<CategoriesController>(
+          builder: (categoriesController) {
+
+            final categories = categoriesController.categoriesModel.categories!;
+            return GridView.builder(
+                itemCount: categories.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+                itemBuilder: (context, index) {
+                  return  CategoryCardWidget(categoryName: categories[0].categoryName.toString(),
+                    imageUrl: categories[0].categoryImg.toString(),);
+            });
+          }
+        ),
       ));
   }
 }

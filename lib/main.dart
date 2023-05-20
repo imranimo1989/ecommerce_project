@@ -1,5 +1,6 @@
 import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/categories_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/home_slider_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/otp_timer_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/user_profile_controller.dart';
@@ -110,6 +111,7 @@ class GetXBindings extends Bindings{
     Get.put(UserProfileController());
     Get.put(UserProfileController());
     Get.put(HomeSliderController());
+    Get.put(CategoriesController());
 
 
   }
