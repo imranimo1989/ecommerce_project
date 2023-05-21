@@ -77,10 +77,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     : HomeCarouselSliderWidget(
                         homeSliderModel: carouselSliderController.homeSliderModel,
                       );
-              }),
+              }),//=========================================================================
               const SizedBox(
                 height: 16,
               ),
+              ///categories=============================================================================================
               RemarksTitleWidget(
                 remarksTitle: 'Categories',
                 onTapSeeAll: () {
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               .toList(),
                         ),
                       );
-              }),
+              }),///====================================================================================================
               const SizedBox(
                 height: 16,
               ),
