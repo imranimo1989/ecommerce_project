@@ -1,11 +1,10 @@
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 
 class ThemeBuilder extends StatefulWidget {
   final Widget Function(BuildContext context, Brightness brightness) builder;
-  final Brightness defaultBrightness;
+  final Brightness? defaultBrightness;
 
-  ThemeBuilder({super.key, required this.builder, required this.defaultBrightness});
+  const ThemeBuilder({super.key, required this.builder, required this.defaultBrightness});
 
   @override
   State<ThemeBuilder> createState() => _ThemeBuilderState();
@@ -21,7 +20,7 @@ class _ThemeBuilderState extends State<ThemeBuilder> {
   @override
   void initState() {
     super.initState();
-    _brightness = widget.defaultBrightness;
+    _brightness = widget.defaultBrightness!;
 
     if (mounted) setState(() {});
   }

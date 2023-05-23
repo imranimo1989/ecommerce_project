@@ -27,7 +27,7 @@ class CraftyBay extends StatelessWidget {
         return GetMaterialApp(
           initialBinding: GetXBindings(),
           debugShowCheckedModeBanner: false,
-          //themeMode: ThemeMode.light,
+          themeMode: ThemeMode.light,
 
      /*     darkTheme: ThemeData(
             appBarTheme: const AppBarTheme(
@@ -76,7 +76,7 @@ class CraftyBay extends StatelessWidget {
                 )
             ),
             brightness: brightness,
-            colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
+            //colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
             textTheme: const TextTheme(
 
             ),

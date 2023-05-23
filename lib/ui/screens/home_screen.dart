@@ -1,6 +1,6 @@
-import 'package:ecommerce_project/ui/screens/complete_profile_screen.dart';
 import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
 import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
+import 'package:ecommerce_project/ui/screens/profile_screen.dart';
 import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/categories_controller.dart';
@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   if (!value) {
                     Get.to(() => const EmailVerificationScreen());
                   } else {
-                    Get.to(() => const CompleteProfileScreen());
+                    Get.to(() => const ProfileScreen());
                   }
                 });
               },
