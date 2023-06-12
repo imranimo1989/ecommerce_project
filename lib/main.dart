@@ -11,6 +11,8 @@ import 'package:get/get.dart';
 import 'ui/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/state_manager/product_by_category_controller.dart';
+import 'ui/state_manager/product_controller.dart';
 import 'ui/state_manager/user_auth_controller.dart';
 
 void main() {
@@ -112,6 +114,12 @@ class GetXBindings extends Bindings{
     Get.put(UserProfileController());
     Get.put(HomeSliderController());
     Get.put(CategoriesController());
+    Get.put(PopularProductByRemarkController());
+    Get.put(NewProductByRemarkController());
+    Get.put(SpecialProductByRemarkController());
+    Get.put(ProductController());
+
+
 
 
   }

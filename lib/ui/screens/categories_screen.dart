@@ -39,7 +39,9 @@ class CategoriesScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return  CategoryCardWidget(
                       categoryName: categories[index].categoryName.toString(),
-                      imageUrl: categories[index].categoryImg.toString(),);
+                      imageUrl: categories[index].categoryImg.toString(),
+                      id: categories[index].id!,
+                    );
             }),
               );
           }

@@ -19,7 +19,7 @@ class WishlistScreen extends StatelessWidget {
         ),
         title: const Text("My Wish List"),
       ),
-      body: Padding(
+     /* body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, childAspectRatio: .82,mainAxisSpacing: 4,crossAxisSpacing: 4
@@ -30,7 +30,7 @@ class WishlistScreen extends StatelessWidget {
             itemBuilder: (context, index){
               return const ProductCardWidget();
             }),
-      ),
+      ),*/
     );
   }
 }
