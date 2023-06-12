@@ -24,6 +24,7 @@ class UserAuthController extends GetxController {
     }
   } //========================End Email Verification=============================
 
+  //OTP verification
   bool _otpVerificationInProgress = false;
 
   bool get otpVerificationInProgress => _otpVerificationInProgress;
@@ -43,6 +44,8 @@ class UserAuthController extends GetxController {
 
       //save token data to shared preferences from api
       await Get.find<AuthController>().saveToken(response.responseBody["data"]);
+
+      //get user profile data when otp verified from api
       Get.find<UserProfileController>().getUserProfile();
 
       //Checking token saved or not

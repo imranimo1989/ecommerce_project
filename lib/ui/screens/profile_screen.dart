@@ -1,3 +1,4 @@
+import 'package:ecommerce_project/ui/state_manager/auth_controller.dart';
 import 'package:ecommerce_project/ui/utils/app_colors.dart';
 import 'package:ecommerce_project/ui/utils/styles.dart';
 import 'package:flutter/material.dart';
@@ -36,11 +37,11 @@ class ProfileScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Mohammed Imran",
+                          "${AuthController.userProfileData!.firstName} ${AuthController.userProfileData!.lastName}",
                           style: titleTextStyle.copyWith(color: Colors.white),
                         ),
                         const SizedBox(height: 8,),
-                        Text("01786114917",style: subTextStyle.copyWith(color: Colors.white),),
+                        Text(AuthController.userProfileData!.mobile.toString(),style: subTextStyle.copyWith(color: Colors.white),),
                       ],
                     ),
                     IconButton(

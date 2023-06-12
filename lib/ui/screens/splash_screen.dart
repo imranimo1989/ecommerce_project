@@ -24,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
       //User login state check
       log("User Login State: ${loginState.toString()}");
+
       if (loginState) {
         Get.off(() => const BottomNavBarScreen());
       } else {

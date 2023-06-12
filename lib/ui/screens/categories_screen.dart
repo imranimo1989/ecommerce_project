@@ -29,13 +29,19 @@ class CategoriesScreen extends StatelessWidget {
             final categories = categoriesController.categoriesModel.categories!;
 
             return categoriesController.getCategoriesInProgress ? (const Center(
-              child: CircularProgressIndicator(),)): GridView.builder(
-                itemCount: categories.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
-                itemBuilder: (context, index) {
-                  return  CategoryCardWidget(categoryName: categories[index].categoryName.toString(),
-                    imageUrl: categories[index].categoryImg.toString(),);
-            });
+              child: CircularProgressIndicator(),)): RefreshIndicator(
+                onRefresh: () async {
+                  Get.find<CategoriesController>().getCategories();
+                },
+                child: GridView.builder(
+                  itemCount: categories.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4),
+                  itemBuilder: (context, index) {
+                    return  CategoryCardWidget(
+                      categoryName: categories[index].categoryName.toString(),
+                      imageUrl: categories[index].categoryImg.toString(),);
+            }),
+              );
           }
         ),
       ));

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:ecommerce_project/data/model/user_profile_model.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,10 @@ class AuthController extends GetxController {
     //check user login state
     ///get token
     await getToken();
+    log(_token.toString());
     ///get user profile data
     await getUserProfileData();
+    log(_profileData.toString());
     return _token != null; //best way
   } //===========================End Is logged In Method ====================================
 
@@ -48,3 +51,4 @@ class AuthController extends GetxController {
     await sharedPreferences.clear();
   } //===========================End Clear User Data Method =================================
 }
+

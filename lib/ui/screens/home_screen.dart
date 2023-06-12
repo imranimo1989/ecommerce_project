@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecommerce_project/ui/screens/email_verification_screen.dart';
 import 'package:ecommerce_project/ui/screens/produt_list_screen.dart';
 import 'package:ecommerce_project/ui/screens/profile_screen.dart';
@@ -38,11 +40,15 @@ class _HomeScreenState extends State<HomeScreen> {
             AppBarIconButton(
               iconData: Icons.person,
               onTap: () {
+                //User login state check
+
+
                 Get.find<AuthController>().isLoggedIn().then((value) {
-                  if (!value) {
+                  if (value) {
+                    log(value.toString());
                     Get.to(() => const EmailVerificationScreen());
                   } else {
-                    Get.to(() => const ProfileScreen());
+                    Get.offAll(() => const ProfileScreen());
                   }
                 });
               },
@@ -114,10 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   Get.to(() => const ProductListScreen());
                 },
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: const [
+                  children: [
                     ProductCardWidget(),
                     ProductCardWidget(),
                     ProductCardWidget(),
@@ -128,10 +134,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 remarksTitle: 'Special',
                 onTapSeeAll: () {},
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: const [
+                  children: [
                     ProductCardWidget(),
                     ProductCardWidget(),
                     ProductCardWidget(),
@@ -142,10 +148,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 remarksTitle: 'New',
                 onTapSeeAll: () {},
               ),
-              SingleChildScrollView(
+              const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
-                  children: const [
+                  children: [
                     ProductCardWidget(),
                     ProductCardWidget(),
                     ProductCardWidget(),
