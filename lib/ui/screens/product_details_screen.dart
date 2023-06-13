@@ -269,9 +269,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
+                  Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                    children:const [
                       Text("Price",style: TextStyle(
                         color: lightGreyColor,fontSize: 14,letterSpacing: .5
                       ),),

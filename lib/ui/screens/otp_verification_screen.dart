@@ -116,6 +116,7 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                               message: "OTP Verification Code Send Successful.",
                             ));
                             Get.find<OtpTimerController>().startTimer();
+
                     }else{
                             Get.showSnackbar(const GetSnackBar(
                               duration: Duration(seconds: 5),

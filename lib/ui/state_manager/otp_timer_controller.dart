@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 class OtpTimerController extends GetxController{
   late Timer _timer;
-  int start = 10;
+  int start = 60;
   bool? isTimerEnd;
 
   //int get start => _start;

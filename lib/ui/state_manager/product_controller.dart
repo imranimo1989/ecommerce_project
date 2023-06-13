@@ -3,7 +3,7 @@ import 'package:ecommerce_project/data/services/network_caller.dart';
 import 'package:get/get.dart';
 
 class ProductController extends GetxController {
-  bool _getProductsByCategoryInProgress = true;
+  bool _getProductsByCategoryInProgress = false ;
 
   ProductByCategoryModel _productByCategoryModel = ProductByCategoryModel();
 
@@ -17,7 +17,7 @@ class ProductController extends GetxController {
 
     final response =
         await NetworkCaller.getRequest(url: "/ProductDetailsById/$productId");
-    _getProductsByCategoryInProgress = true;
+    _getProductsByCategoryInProgress = false;
 
     if (response.isSuccess) {
       _productByCategoryModel =

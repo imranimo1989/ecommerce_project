@@ -8,6 +8,7 @@ import 'package:ecommerce_project/ui/state_manager/bottom_navigation_bar_control
 import 'package:ecommerce_project/ui/state_manager/categories_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/home_slider_controller.dart';
 import 'package:ecommerce_project/ui/state_manager/product_by_category_controller.dart';
+import 'package:ecommerce_project/ui/state_manager/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../widgets/category_card_widget.dart';
@@ -116,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     (e) => CategoryCardWidget(
                                       categoryName: e.categoryName.toString(),
                                       imageUrl: e.categoryImg.toString(),
-                                      id: e.id!,
+                                      id: e.id??0,
                                     ),
                                   )
                                   .toList(),
@@ -129,11 +130,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 16,
               ),
 
-              RemarksTitleWidget(
-                remarksTitle: 'Popular',
-                onTapSeeAll: () {
-                 // Get.to(() =>  ProductListScreen(categoryId: null,));
-                },
+              GetBuilder<PopularProductByRemarkController>(
+                builder: (popularProduct) {
+                  return RemarksTitleWidget(
+                    remarksTitle: 'Popular',
+                    onTapSeeAll: () {
+
+                    },
+                  );
+                }
               ),
               GetBuilder<PopularProductByRemarkController>(
                   builder: (productByRemarkController) {

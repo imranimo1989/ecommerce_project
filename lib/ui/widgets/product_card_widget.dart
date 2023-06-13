@@ -1,3 +1,4 @@
+import 'package:ecommerce_project/data/model/product.dart';
 import 'package:ecommerce_project/ui/screens/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,7 @@ import '../utils/app_colors.dart';
 
 class ProductCardWidget extends StatelessWidget {
   const ProductCardWidget({
-    super.key,
+    super.key, required Product productList,
   });
 
   @override

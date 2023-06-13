@@ -17,7 +17,10 @@ class _ProductListScreenState extends State<ProductListScreen> {
 
   @override
   void initState() {
-   Get.find<ProductController>().getProductsByCategory(widget.categoryId);
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Get.find<ProductController>().getProductsByCategory(widget.categoryId);
+
+    });
     super.initState();
   }
 

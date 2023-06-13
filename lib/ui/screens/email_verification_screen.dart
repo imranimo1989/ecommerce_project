@@ -21,10 +21,12 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
   final TextEditingController _textEditingController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey();
 
+/*
   final List<Widget> themeMode = <Widget>[
     const Text('Light'),
     const Text('Dark'),
     ];
+*/
 
   final List<bool> _selectedMode = <bool>[true, false,];
   bool vertical = false;
@@ -92,7 +94,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                   ),
                   const SizedBox(height: 24,),
 
-                  ToggleButtons(
+                /*  ToggleButtons(
                     //direction: vertical ? Axis.vertical : Axis.horizontal,
                     onPressed: (int index) {
 
@@ -124,7 +126,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                     ),
                     isSelected: _selectedMode,
                     children: themeMode,
-                  ),
+                  ),*/
 
                 ],
               ),
